@@ -726,11 +726,74 @@
     .slide-nav button { width: 32px; height: 32px; font-size: 0.9rem; }
     .slide-nav .nav-counter { font-size: 0.72rem; min-width: 3rem; }
 
+    /* Matrix slide — override the removed inline padding */
+    .slide--matrix { padding-top: 24px !important; padding-bottom: 80px !important; }
+
+    /* Chapter grid → single column */
+    .chapter-grid { grid-template-columns: 1fr !important; }
+
     /* Slide footer number — hide on mobile to save space */
     .slide-footer { display: none; }
 
     /* Note text */
     .note { font-size: 0.72rem; }
+  }
+
+  /* ══════════════════════════════════════
+     SMALL MOBILE  (≤ 390px — iPhone SE etc)
+  ══════════════════════════════════════ */
+  @media (max-width: 390px) {
+
+    .slide { padding: 16px 14px 72px; }
+
+    /* Title */
+    .slide--title h1 { font-size: 1.65rem; }
+    .slide--title .title-image { height: 170px; }
+    .subtitle { font-size: 0.82rem; }
+    .dmvb-logo { width: 56px; height: 56px; }
+
+    /* Slide headers */
+    .slide--content h2 { font-size: 1.2rem; }
+
+    /* Cards: 2-col grid for pests & beneficials to reduce scroll */
+    .cols-3 { grid-template-columns: 1fr 1fr !important; gap: 0.6rem; }
+
+    /* Smaller card images on 2-col layout */
+    .pest-card img,
+    .beneficial-card img { height: 70px !important; }
+    .pest-card { padding: 0.8rem; }
+    .beneficial-card { padding: 0.8rem; }
+    .pest-card h3, .beneficial-card h3 { font-size: 0.85rem; }
+    .pest-card p, .beneficial-card p { font-size: 0.75rem; line-height: 1.4; }
+    .damage-tag, .target-tag { font-size: 0.62rem; }
+
+    /* Keep 2-col grids single column */
+    .cols-2 { grid-template-columns: 1fr !important; }
+
+    /* Soil defender images */
+    .soil-img { height: 100px !important; }
+
+    /* Callouts */
+    .callout { padding: 0.7rem 0.8rem; }
+    .callout h4 { font-size: 0.82rem; }
+    .callout p, .callout li { font-size: 0.75rem; }
+
+    /* Steps */
+    .step-num { width: 26px; height: 26px; font-size: 0.75rem; }
+    .step-content h4 { font-size: 0.82rem; }
+    .step-content p { font-size: 0.75rem; }
+
+    /* Prevention cards */
+    .prevention-card h3 { font-size: 0.88rem; }
+    .prevention-card p, .prevention-card li { font-size: 0.75rem; }
+
+    /* Final slide */
+    .slide--final h2 { font-size: 1.3rem; }
+    .resource-link { font-size: 0.7rem; padding: 0.5rem 0.8rem; }
+
+    /* Nav pill */
+    .slide-nav { gap: 0.6rem; padding: 0.45rem 0.8rem; }
+    .slide-nav button { width: 28px; height: 28px; font-size: 0.8rem; }
   }
 </style>
 </head>
@@ -938,7 +1001,7 @@
   </div>
 
   <!-- ══ SLIDE 6: TREATMENT MATRIX ══ -->
-  <div class="slide slide--content" style="padding-top: 50px; padding-bottom: 50px;">
+  <div class="slide slide--content slide--matrix">
     <div class="slide-header">
       <span class="slide-tag">Quick Reference</span>
       <h2>Pest → <span>Predator</span> Matrix</h2>
@@ -1150,7 +1213,7 @@
     <h2>Join a DMVb Chapter Near You</h2>
     <div class="title-divider" style="background:var(--green-pale);"></div>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; width:100%; max-width:900px; margin:1.5rem auto 0;">
+    <div class="chapter-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; width:100%; max-width:900px; margin:1.5rem auto 0;">
       <a href="https://www.facebook.com/groups/1169242581725289" target="_blank" style="text-decoration:none;">
         <div style="background:rgba(168,200,158,0.12); border:1px solid rgba(168,200,158,0.3); border-top:3px solid var(--green-pale); border-radius:8px; padding:1.2rem; text-align:left;">
           <p style="font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--green-pale); margin-bottom:0.4rem;">Indianapolis / Anderson</p>
