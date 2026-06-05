@@ -1204,6 +1204,7 @@
     slides[current].classList.remove('active');
     current = Math.max(0, Math.min(n, slides.length - 1));
     slides[current].classList.add('active');
+    window.scrollTo(0, 0);
     document.getElementById('counter').textContent = (current + 1) + ' / ' + slides.length;
     document.getElementById('prev').disabled = current === 0;
     document.getElementById('next').disabled = current === slides.length - 1;
