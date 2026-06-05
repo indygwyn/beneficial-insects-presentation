@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beneficial Insects for Houseplant Pest Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1a2e1a;
+    --green-mid: #2d5a27;
+    --green-light: #4a8c3f;
+    --green-pale: #a8c89e;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f4;
+    --amber: #c8762a;
+    --red-accent: #8b2e2e;
+    --text-dark: #1c1c1c;
+    --text-mid: #3a3a3a;
+    --shadow: rgba(26,46,26,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--green-deep);
+    color: var(--cream);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* SLIDE SYSTEM */
+  .slide-deck { width: 100%; }
+
+  .slide {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 80px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  /* ── TITLE SLIDE ── */
+  .slide--title {
+    background: var(--green-deep);
+    background-image:
+      radial-gradient(ellipse at 20% 80%, rgba(74,140,63,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(45,90,39,0.3) 0%, transparent 50%);
+    text-align: center;
+  }
+
+  .slide--title::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a8c3f' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green-pale);
+    margin-bottom: 1.5rem;
+  }
+
+  .slide--title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .slide--title h1 em {
+    font-style: italic;
+    color: var(--green-pale);
+  }
+
+  .slide--title .subtitle {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--green-pale);
+    margin-top: 1rem;
+    opacity: 0.85;
+  }
+
+  .title-divider {
+    width: 80px;
+    height: 2px;
+    background: var(--green-light);
+    margin: 2rem auto;
+  }
+
+  .credit {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--green-pale);
+    opacity: 0.6;
+    margin-top: 2.5rem;
+  }
+
+  /* ── SECTION DIVIDERS ── */
+  .slide--section {
+    background: var(--green-mid);
+    background-image: radial-gradient(ellipse at 50% 50%, rgba(74,140,63,0.25) 0%, transparent 70%);
+    text-align: center;
+  }
+
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(168,200,158,0.15);
+    line-height: 1;
+    margin-bottom: -1rem;
+  }
+
+  .slide--section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--cream);
+  }
+
+  /* ── CONTENT SLIDES ── */
+  .slide--content {
+    background: var(--warm-white);
+    color: var(--text-dark);
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .slide--content .slide-header {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid var(--green-light);
+    padding-bottom: 1rem;
+  }
+
+  .slide--content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.2;
+  }
+
+  .slide--content h2 span {
+    color: var(--green-light);
+  }
+
+  .slide--content .slide-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  /* ── INTRO SLIDE ── */
+  .slide--intro {
+    background: var(--cream);
+    color: var(--text-dark);
+  }
+
+  .slide--intro .big-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--green-deep);
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+  }
+
+  .slide--intro .big-quote::before {
+    content: '"';
+    font-size: 8rem;
+    color: var(--green-pale);
+    position: absolute;
+    top: -3rem;
+    left: -2rem;
+    line-height: 1;
+    font-family: 'Playfair Display', serif;
+    opacity: 0.4;
+  }
+
+  /* ── COLUMNS ── */
+  .cols {
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+    align-items: start;
+  }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+  .cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+  /* ── PEST CARDS ── */
+  .pest-card {
+    background: var(--cream);
+    border: 1px solid rgba(26,46,26,0.1);
+    border-radius: 8px;
+    padding: 1.4rem;
+    border-left: 4px solid var(--red-accent);
+  }
+
+  .pest-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--red-accent);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .pest-card p {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  .pest-card .damage-tag {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(139,46,46,0.08);
+    color: var(--red-accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+  }
+
+  /* ── BENEFICIAL CARDS ── */
+  .beneficial-card {
+    background: var(--warm-white);
+    border: 1px solid rgba(26,46,26,0.1);
+    border-radius: 8px;
+    padding: 1.4rem;
+    border-left: 4px solid var(--green-light);
+  }
+
+  .beneficial-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .beneficial-card p {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  .targets {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .target-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(74,140,63,0.12);
+    color: var(--green-mid);
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+  }
+
+  /* ── TREATMENT TABLE ── */
+  .treatment-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  .treatment-table th {
+    background: var(--green-deep);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.8rem 1rem;
+    text-align: left;
+  }
+
+  .treatment-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(26,46,26,0.08);
+    color: var(--text-mid);
+    vertical-align: top;
+  }
+
+  .treatment-table tr:nth-child(even) td { background: rgba(26,46,26,0.03); }
+
+  .treatment-table td:first-child {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--red-accent);
+    white-space: nowrap;
+  }
+
+  .treatment-table .predator-name {
+    font-weight: 500;
+    color: var(--green-mid);
+  }
+
+  /* ── CALLOUT BOXES ── */
+  .callout {
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .callout--warning {
+    background: rgba(200,118,42,0.1);
+    border-left: 4px solid var(--amber);
+  }
+
+  .callout--warning h4 {
+    color: var(--amber);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .callout--info {
+    background: rgba(74,140,63,0.08);
+    border-left: 4px solid var(--green-light);
+  }
+
+  .callout--info h4 {
+    color: var(--green-mid);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .callout p, .callout li {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .callout ul { padding-left: 1.2rem; }
+
+  /* ── STEPS ── */
+  .steps { counter-reset: step; }
+
+  .step {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--green-light);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .step-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+  }
+
+  .step-content p {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  /* ── DARK CONTENT SLIDE ── */
+  .slide--dark {
+    background: var(--green-deep);
+  }
+
+  .slide--dark .slide-header h2 {
+    color: var(--cream);
+  }
+
+  .slide--dark .slide-header {
+    border-bottom-color: var(--green-light);
+  }
+
+  .slide--dark .slide-tag {
+    color: var(--green-pale) !important;
+  }
+
+  /* ── PREVENTION GRID ── */
+  .prevention-card {
+    background: rgba(168,200,158,0.08);
+    border: 1px solid rgba(168,200,158,0.2);
+    border-radius: 8px;
+    padding: 1.4rem;
+  }
+
+  .prevention-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--green-pale);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .prevention-card h3 .icon {
+    font-size: 1.2rem;
+  }
+
+  .prevention-card p, .prevention-card li {
+    font-size: 0.87rem;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.6;
+  }
+
+  .prevention-card ul { padding-left: 1.2rem; }
+
+  /* ── FINAL SLIDE ── */
+  .slide--final {
+    background: var(--green-mid);
+    text-align: center;
+    background-image:
+      radial-gradient(ellipse at 30% 70%, rgba(26,46,26,0.5) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 30%, rgba(74,140,63,0.2) 0%, transparent 60%);
+  }
+
+  .slide--final h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 1rem;
+  }
+
+  .slide--final p {
+    font-size: 1rem;
+    color: var(--green-pale);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .resource-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--green-pale);
+    border-radius: 4px;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── SLIDE NUMBER BAR ── */
+  .slide-footer {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    opacity: 0.4;
+    text-transform: uppercase;
+  }
+
+  .slide--content .slide-footer,
+  .slide--intro .slide-footer { color: var(--green-deep); }
+
+  /* horizontal rule */
+  hr.subtle {
+    border: none;
+    border-top: 1px solid rgba(26,46,26,0.1);
+    margin: 1rem 0;
+  }
+
+  /* small note text */
+  .note {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    opacity: 0.65;
+    font-style: italic;
+    margin-top: 0.4rem;
+  }
+</style>
+</head>
+<body>
+<div class="slide-deck">
+
+  <!-- ══ SLIDE 1: TITLE ══ -->
+  <div class="slide slide--title">
+    <p class="eyebrow">Indy Houseplant Club Presentation</p>
+    <h1>Beneficial Insects<br><em>for Houseplant Pests</em></h1>
+    <div class="title-divider"></div>
+    <p class="subtitle">An introduction to integrated pest management<br>using nature's own solutions</p>
+    <p class="credit">Information sourced from DMV Beneficials · dmvbeneficials.com</p>
+    <div class="slide-footer">1 / 10</div>
+  </div>
+
+  <!-- ══ SLIDE 2: WHY BENEFICIALS ══ -->
+  <div class="slide slide--intro">
+    <div class="big-quote">
+      Many sprays don't kill on contact — giving the pest time to survive,<br>develop resistance, and continue producing offspring.
+    </div>
+    <div style="margin-top:3rem; max-width:750px; text-align:center;">
+      <p style="color:var(--green-mid); font-size:1rem; line-height:1.8;">Beneficial insects target pests at specific life stages, can't generate resistance, and contribute to long-term plant health — not just a quick fix. They form the foundation of informed, sustainable pest management.</p>
+    </div>
+    <div class="slide-footer">2 / 10</div>
+  </div>
+
+  <!-- ══ SLIDE 3: MEET THE PESTS ══ -->
+  <div class="slide slide--content">
+    <div class="slide-header">
+      <span class="slide-tag">The Threats</span>
+      <h2>Common Houseplant <span>Pests</span></h2>
+    </div>
+    <div class="cols cols-3">
+      <div class="pest-card">
+        <h3>Thrips</h3>
+        <p>Tiny, fast-moving insects that rasp leaf tissue, leaving silvery streaking. Multiple life stages make them challenging — adults, larvae, and soil-dwelling pupae all require different predators.</p>
+        <span class="damage-tag">Multi-stage · Foliage + Soil</span>
+      </div>
+      <div class="pest-card">
+        <h3>Spider Mites</h3>
+        <p>Nearly invisible mites that feed on cell contents, leaving stippling and fine webbing. Highly resistant to most pesticide sprays — pyrethrins can actually cause population flares.</p>
+        <span class="damage-tag">Resistant to pesticides</span>
+      </div>
+      <div class="pest-card">
+        <h3>Mealybugs</h3>
+        <p>Fuzzy, cottony white insects that cluster in leaf joints. Cause yellowing, overall plant decline, and leaf drop. Can feel nearly impossible to eliminate by hand alone.</p>
+        <span class="damage-tag">Foliage · Stems · Roots</span>
+      </div>
+      <div class="pest-card">
+        <h3>Fungus Gnats</h3>
+        <p>Flying adults are annoying; it's the larvae in the soil that cause real damage to roots. Very common in overwatered soil and easy to eliminate once you target the right life stage.</p>
+        <span class="damage-tag">Soil-dwelling larvae</span>
+      </div>
+      <div class="pest-card">
+        <h3>Scale</h3>
+        <p>Insects that hide under a waxy dome on stems and leaves. No pesticide or predator can penetrate the dome itself — treatment targets juveniles streaming out underneath it.</p>
+        <span class="damage-tag">Stems · Foliage</span>
+      </div>
+      <div class="pest-card">
+        <h3>Broad &amp; Flat Mites</h3>
+        <p>Microscopic mites invisible to the naked eye. Broad mites frequently attack hoya and cannabis; damage appears as distorted, hardened new growth or bronzing at growing tips.</p>
+        <span class="damage-tag">New growth distortion</span>
+      </div>
+    </div>
+    <div class="slide-footer">3 / 10</div>
+  </div>
+
+  <!-- ══ SLIDE 4: MEET THE BENEFICIALS ══ -->
+  <div class="slide slide--content">
+    <div class="slide-header">
+      <span class="slide-tag">The Allies</span>
+      <h2>Beneficial Insects &amp; <span>Mites</span></h2>
+    </div>
+    <div class="cols cols-3">
+      <div class="beneficial-card">
+        <h3>Lacewing Larvae</h3>
+        <p>Generalist "aphid lions." Short 10–14 day indoor life cycle; require recurring application. Can be released alongside other beneficials (release first, then wait 15 minutes).</p>
+        <div class="targets">
+          <span class="target-tag">Thrips</span><span class="target-tag">Aphids</span><span class="target-tag">Mealybugs</span><span class="target-tag">Spider Mite Eggs</span><span class="target-tag">Scale (juvenile)</span>
+        </div>
+      </div>
+      <div class="beneficial-card">
+        <h3>Minute Pirate Bug</h3>
+        <p>The best thrips predator. Attacks all mobile thrips stages, consuming up to 30 per day. Also hunts for sport — a genuinely voracious predator. More expensive than lacewings.</p>
+        <div class="targets">
+          <span class="target-tag">Thrips (all stages)</span><span class="target-tag">Whitefly</span>
+        </div>
+      </div>
+      <div class="beneficial-card">
+        <h3>Cryptolaemus Larvae</h3>
+        <p>The "mealybug destroyer." Young larvae eat 250+ mealybug nymphs or 1,000+ eggs during their larval stage. Order larvae, not adult beetles — adults suit greenhouse scale.</p>
+        <div class="targets">
+          <span class="target-tag">Mealybugs (all species)</span><span class="target-tag">Some scale</span>
+        </div>
+      </div>
+      <div class="beneficial-card">
+        <h3>Cucumeris Mite</h3>
+        <p>Industry standard for thrips. Senses where larvae emerge from leaves and attacks them as they hatch. Available as bottle (bulk) or slow-release sachet. Also targets broad mites.</p>
+        <div class="targets">
+          <span class="target-tag">Thrips larvae</span><span class="target-tag">Broad mites</span>
+        </div>
+      </div>
+      <div class="beneficial-card">
+        <h3>Persimilis Mite</h3>
+        <p>Bright red, incredibly fast — literally outruns two-spotted spider mites. Best for active, heavy infestations. Needs humidity consistently above 60%. Combine with fallacis for longer coverage.</p>
+        <div class="targets">
+          <span class="target-tag">Two-spotted spider mite</span>
+        </div>
+      </div>
+      <div class="beneficial-card">
+        <h3>Fallacis / Californicus Mites</h3>
+        <p>Better suited for ambient humidity (40–60%). Fallacis eats 15–30 spider mites/day; californicus (~5/day) suits prevention. Both eat a broader range of pest mite species than persimilis.</p>
+        <div class="targets">
+          <span class="target-tag">Spider mites</span><span class="target-tag">Broad mites</span><span class="target-tag">False spider mites</span>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">4 / 10</div>
+  </div>
+
+  <!-- ══ SLIDE 5: SOIL DEFENDERS ══ -->
+  <div class="slide slide--content">
+    <div class="slide-header">
+      <span class="slide-tag">Underground Allies</span>
+      <h2>Soil-Dwelling <span>Defenders</span></h2>
+    </div>
+    <div class="cols cols-2">
+      <div>
+        <div class="beneficial-card" style="margin-bottom:1.2rem;">
+          <h3>Stratiolaelaps Mites</h3>
+          <p>Reddish-brown microscopic soil mites. Truly essential for overall soil health — eat thrips pupae, fungus gnat larvae, overwintering spider mites, mealybug eggs, and pathogenic fungi and bacteria. Work in soil-less media too (LECA, pon, moss). Cannot tolerate dry conditions — not suitable for cacti or succulents.</p>
+          <div class="targets">
+            <span class="target-tag">Thrips pupae</span><span class="target-tag">Fungus gnat larvae</span><span class="target-tag">Mealybug eggs</span><span class="target-tag">Soil pathogens</span>
+          </div>
+        </div>
+        <div class="callout callout--warning">
+          <h4>Do not skip stratiolaelaps for thrips!</h4>
+          <p>If you only treat foliage, new thrips will keep emerging from the soil and reinfecting the plant. Soil treatment is non-negotiable for full eradication.</p>
+        </div>
+      </div>
+      <div>
+        <div class="beneficial-card" style="margin-bottom:1.2rem;">
+          <h3>Nematodes (Sf strain)</h3>
+          <p>Microscopic parasitic roundworms that attack larvae in growing media. They live up to 18 months in soil and don't harm other beneficial insects. Best for fungus gnats and thrips pupae. Store refrigerated (unopened) for up to 2 weeks.</p>
+          <div class="targets">
+            <span class="target-tag">Fungus gnat eggs</span><span class="target-tag">Thrips eggs</span>
+          </div>
+        </div>
+        <div class="callout callout--info">
+          <h4>Stratiolaelaps vs. Nematodes</h4>
+          <p>For active infestations, start with stratiolaelaps (more voracious). Nematodes work well as a follow-up or for longer-term prevention. Stratiolaelaps also works in soil-less media; nematodes require a moist substrate.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">5 / 10</div>
+  </div>
+
+  <!-- ══ SLIDE 6: TREATMENT MATRIX ══ -->
+  <div class="slide slide--content" style="padding-top: 50px; padding-bottom: 50px;">
+    <div class="slide-header">
+      <span class="slide-tag">Quick Reference</span>
+      <h2>Pest → <span>Predator</span> Matrix</h2>
+    </div>
+    <table class="treatment-table">
+      <thead>
+        <tr>
+          <th>Pest</th>
+          <th>Primary Predator(s)</th>
+          <th>Secondary / Support</th>
+          <th>Soil Treatment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Thrips</td>
+          <td><span class="predator-name">Minute pirate bug</span> (adults/teens)<br><span class="predator-name">Cucumeris mite</span> (young larvae)</td>
+          <td>Lacewing larvae; swirskii mites (if temp &gt;85°F)</td>
+          <td>Stratiolaelaps + nematodes Sf</td>
+        </tr>
+        <tr>
+          <td>Spider Mites</td>
+          <td><span class="predator-name">Persimilis mite</span> (heavy infest., &gt;60% RH)<br><span class="predator-name">Fallacis / Californicus</span> (ambient RH)</td>
+          <td>Lacewing larvae (eat eggs)</td>
+          <td>Stratiolaelaps (overwinter mites)</td>
+        </tr>
+        <tr>
+          <td>Mealybugs</td>
+          <td><span class="predator-name">Cryptolaemus larvae</span></td>
+          <td>Lacewing larvae (small infest. or prevention)</td>
+          <td>Stratiolaelaps (eggs in soil)</td>
+        </tr>
+        <tr>
+          <td>Fungus Gnats</td>
+          <td><span class="predator-name">Nematodes Sf</span> (larvae in soil)</td>
+          <td>Yellow sticky traps (adults)</td>
+          <td>Nematodes Sf</td>
+        </tr>
+        <tr>
+          <td>Scale</td>
+          <td><span class="predator-name">Lacewing larvae</span> (juvenile scale)</td>
+          <td>Manual removal of hard scale required</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Broad Mites</td>
+          <td><span class="predator-name">Cucumeris mite</span></td>
+          <td>Californicus mite</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Aphids</td>
+          <td><span class="predator-name">Lacewing larvae</span></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note" style="margin-top:0.8rem;">Apply fresh beneficials every two weeks for at least three treatments during active infestations.</p>
+    <div class="slide-footer">6 / 10</div>
+  </div>
+
+  <!-- ══ SLIDE 7: HOW TO TREAT ══ -->
+  <div class="slide slide--content">
+    <div class="slide-header">
+      <span class="slide-tag">Treatment Protocol</span>
+      <h2>How to <span>Treat an Active Infestation</span></h2>
+    </div>
+    <div class="cols cols-2">
+      <div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Physically Remove Pests First</h4>
+              <p>Wipe all leaves with a wet washcloth, or rinse the plant on an angle so pests drain away — not back into the pot. Repeat until your beneficials arrive.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Order &amp; Release Beneficials</h4>
+              <p>Select predators for each life stage of your pest (see matrix). Release lacewings first; wait 15 minutes before releasing other mites. Apply every two weeks for at least three rounds.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Stop Rinsing After Release</h4>
+              <p>Once beneficials are on the plant, stop washing — you'll remove them. You can still spot-clean with a damp towel if you see visible pest insects.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Treat the Soil</h4>
+              <p>Add stratiolaelaps (and nematodes for thrips or fungus gnats) at the same time as foliage treatment. Without soil treatment, pests re-emerge from the growing medium.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="callout callout--warning">
+          <h4>⚠ Avoid These Common Mistakes</h4>
+          <ul>
+            <li>Relying on pesticide sprays alone — many don't kill on contact and can cause resistance</li>
+            <li>Using systemic granules for spider mites — these increase spider mite fertility and can cause population explosions</li>
+            <li>Using pyrethrins on spider mites — can cause populations to "flare"</li>
+            <li>Baking or sterilizing new soil — this kills beneficial soil microbes your plants need</li>
+            <li>Only treating foliage for thrips — pupae in soil will continue reinfecting</li>
+          </ul>
+        </div>
+        <div class="callout callout--info" style="margin-top:1rem;">
+          <h4>Quantity Guidance</h4>
+          <p>DMV Beneficials bases sizing estimates on a 6-inch pot as average. Larger plants need more predators; prevention requires fewer than active treatment. Their website includes graphics for each product.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">7 / 10</div>
+  </div>
+
+  <!-- ══ SLIDE 8: THRIPS IN DEPTH ══ -->
+  <div class="slide slide--content">
+    <div class="slide-header">
+      <span class="slide-tag">Case Study</span>
+      <h2>Thrips: <span>A Multi-Stage Battle</span></h2>
+    </div>
+    <div class="cols cols-2">
+      <div>
+        <p style="color:var(--text-mid); font-size:0.92rem; margin-bottom:1.2rem; line-height:1.7;">Thrips need three predators to address every life stage. Treating one stage without the others leads to continued re-infestation.</p>
+        <table class="treatment-table">
+          <thead>
+            <tr>
+              <th>Life Stage</th>
+              <th>Target Predator</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Adults &amp; Teens</td>
+              <td><span class="predator-name">Minute pirate bug</span> (preferred) or Lacewing larvae</td>
+            </tr>
+            <tr>
+              <td>Young Larvae</td>
+              <td><span class="predator-name">Cucumeris mites</span> (or swirskii if &gt;85°F)</td>
+            </tr>
+            <tr>
+              <td>Pupae in Soil</td>
+              <td><span class="predator-name">Stratiolaelaps</span> (first 2 rounds) then Nematodes Sf</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note" style="margin-top:0.8rem;">Apply all three every two weeks · minimum three treatments</p>
+      </div>
+      <div>
+        <div class="callout callout--info" style="margin-bottom:1rem;">
+          <h4>Pirate Bug vs. Lacewings?</h4>
+          <p>Pirate bugs are somewhat more effective — they attack thrips even when not hungry (carrying dead thrips as trophies). They cost roughly twice as much. DMV Beneficials recommends pirate bugs for the first aggressive application, then switching to lacewings for follow-ups.</p>
+        </div>
+        <div class="callout callout--info">
+          <h4>Cucumeris vs. Swirskii?</h4>
+          <p>Cucumeris works better in most home conditions. Only choose swirskii if your growing temperature consistently exceeds 85°F (29°C).</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">8 / 10</div>
+  </div>
+
+  <!-- ══ SLIDE 9: PREVENTION ══ -->
+  <div class="slide slide--dark slide--content">
+    <div class="slide-header">
+      <span class="slide-tag" style="color:var(--green-pale);">Long-Term Strategy</span>
+      <h2>Prevention: <span style="color:var(--green-pale);">Staying Ahead of Pests</span></h2>
+    </div>
+    <div class="cols cols-2">
+      <div class="prevention-card">
+        <h3><span class="icon">🌱</span> Soil Health</h3>
+        <p>Treat your entire plant collection with nematodes Sf at least once a year as standard practice against fungus gnats and thrips. Apply stratiolaelaps mites roughly four times per year — they prevent thrips, root mealybugs, and fungus gnats, and also consume pathogenic fungi and bacteria.</p>
+        <p style="margin-top:0.6rem;">Stratiolaelaps also works in soil-less media (LECA, pon, moss) — a significant advantage over nematodes.</p>
+      </div>
+      <div class="prevention-card">
+        <h3><span class="icon">🔬</span> Predatory Mites on Rotation</h3>
+        <p>Select the appropriate predatory mite for your conditions and release every four months. This creates a standing population that catches infestations before they establish.</p>
+        <ul style="margin-top:0.6rem;">
+          <li>High humidity (&gt;60%) → persimilis for spider mites</li>
+          <li>Ambient humidity → californicus or fallacis</li>
+          <li>Thrips + broad mites → cucumeris</li>
+        </ul>
+      </div>
+      <div class="prevention-card">
+        <h3><span class="icon">🦋</span> Lacewing "Sweeps"</h3>
+        <p>Since lacewing larvae eat a wide range of pests, releasing them regularly every 3–4 months functions like a preventive sweep across your collection. Adjust frequency based on your plant history, budget, and peace of mind.</p>
+      </div>
+      <div class="prevention-card">
+        <h3><span class="icon">📦</span> New Plant Protocol</h3>
+        <p>New soil bags can harbor pest eggs. Do not sterilize new soil — this kills beneficial microbes. Instead, treat new plants and fresh potting mix with stratiolaelaps and/or nematodes before or shortly after potting. Quarantine new acquisitions for 2–4 weeks.</p>
+      </div>
+    </div>
+    <div class="slide-footer" style="color:var(--green-pale);">9 / 10</div>
+  </div>
+
+  <!-- ══ SLIDE 10: RESOURCES ══ -->
+  <div class="slide slide--final">
+    <p class="eyebrow" style="color:var(--green-pale);">Indy Houseplant Club</p>
+    <h2>Resources &amp; Where to Order</h2>
+    <div class="title-divider" style="background:var(--green-pale);"></div>
+    <p>DMV Beneficials coordinates bulk beneficial insect orders in cities across the country through local chapters, as well as offering direct mail order. Their website includes full pest ID guides, predator profiles, release tutorials, and a free consultation form.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
+      <a href="https://dmvbeneficials.com/pest-guide/" class="resource-link">Pest Guide</a>
+      <a href="https://dmvbeneficials.com/pests-predators/meet-the-predators/" class="resource-link">Meet the Beneficials</a>
+      <a href="https://dmvbeneficials.com/resources/treatment-plans/" class="resource-link">Treatment Plans</a>
+      <a href="https://dmvbeneficials.com/dmv-beneficial-chapters/" class="resource-link">Find a Chapter</a>
+    </div>
+    <p style="margin-top:2.5rem; font-size:0.8rem; opacity:0.5; color:var(--green-pale);">dmvbeneficials.com · Free consultations available</p>
+    <div class="slide-footer" style="color:var(--green-pale);">10 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>
