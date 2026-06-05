@@ -510,6 +510,58 @@
   .slide--content .slide-footer,
   .slide--intro .slide-footer { color: var(--green-deep); }
 
+  /* ── SLIDESHOW ── */
+  .slide { display: none; }
+  .slide.active { display: flex; }
+
+  .slide-nav {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    z-index: 100;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    padding: 0.6rem 1.2rem;
+    border-radius: 100px;
+  }
+
+  .slide-nav button {
+    background: none;
+    border: 1.5px solid rgba(255,255,255,0.5);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .slide-nav button:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: white;
+  }
+
+  .slide-nav button:disabled {
+    opacity: 0.25;
+    cursor: default;
+  }
+
+  .slide-nav .nav-counter {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.8);
+    min-width: 4rem;
+    text-align: center;
+  }
+
   /* horizontal rule */
   hr.subtle {
     border: none;
@@ -902,5 +954,35 @@
   </div>
 
 </div>
+
+<nav class="slide-nav">
+  <button id="prev" onclick="changeSlide(-1)" title="Previous">&#8592;</button>
+  <span class="nav-counter" id="counter">1 / 10</span>
+  <button id="next" onclick="changeSlide(1)" title="Next">&#8594;</button>
+</nav>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(n) {
+    slides[current].classList.remove('active');
+    current = Math.max(0, Math.min(n, slides.length - 1));
+    slides[current].classList.add('active');
+    document.getElementById('counter').textContent = (current + 1) + ' / ' + slides.length;
+    document.getElementById('prev').disabled = current === 0;
+    document.getElementById('next').disabled = current === slides.length - 1;
+  }
+
+  function changeSlide(dir) { showSlide(current + dir); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+    if (e.key === 'ArrowLeft') changeSlide(-1);
+  });
+
+  showSlide(0);
+</script>
+
 </body>
 </html>
