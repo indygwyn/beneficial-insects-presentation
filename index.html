@@ -52,15 +52,35 @@
     background-image:
       radial-gradient(ellipse at 20% 80%, rgba(74,140,63,0.2) 0%, transparent 50%),
       radial-gradient(ellipse at 80% 20%, rgba(45,90,39,0.3) 0%, transparent 50%);
-    text-align: center;
+    text-align: left;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0;
   }
 
-  .slide--title::before {
+  .slide--title .title-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 70px;
+    text-align: left;
+  }
+
+  .slide--title .title-image {
+    width: 42%;
+    flex-shrink: 0;
+    background-image: url('https://dmvbeneficials.com/wp-content/uploads/2022/03/lacewing-6.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .slide--title .title-image::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a8c3f' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
+    background: linear-gradient(to right, var(--green-deep) 0%, transparent 30%);
   }
 
   .eyebrow {
@@ -611,22 +631,55 @@
 
   <!-- ══ SLIDE 1: TITLE ══ -->
   <div class="slide slide--title">
-    <img class="dmvb-logo" src="https://dmvbeneficials.com/wp-content/uploads/2019/05/LOGO-2023-var2-15-degree-web-300x300.png" alt="DMV Beneficials logo">
-    <p class="eyebrow">Indy Houseplant Club Presentation</p>
-    <h1>Beneficial Insects<br><em>for Houseplant Pests</em></h1>
-    <div class="title-divider"></div>
-    <p class="subtitle">An introduction to integrated pest management<br>using nature's own solutions</p>
-    <p class="credit">Information sourced from DMV Beneficials · dmvbeneficials.com</p>
+    <div class="title-content">
+      <img class="dmvb-logo" src="https://dmvbeneficials.com/wp-content/uploads/2019/05/LOGO-2023-var2-15-degree-web-300x300.png" alt="DMV Beneficials logo">
+      <p class="eyebrow">Indy Houseplant Club Presentation</p>
+      <h1>Beneficial Insects<br><em>for Houseplant Pests</em></h1>
+      <div class="title-divider" style="margin:2rem 0;"></div>
+      <p class="subtitle" style="text-align:left;">An introduction to integrated pest management<br>using nature's own solutions</p>
+      <p class="credit">Information sourced from DMV Beneficials · dmvbeneficials.com</p>
+    </div>
+    <div class="title-image"></div>
     <div class="slide-footer">1 / 10</div>
   </div>
 
   <!-- ══ SLIDE 2: WHY BENEFICIALS ══ -->
-  <div class="slide slide--intro">
-    <div class="big-quote">
-      Many sprays don't kill on contact — giving the pest time to survive,<br>develop resistance, and continue producing offspring.
+  <div class="slide slide--content">
+    <div class="slide-header">
+      <span class="slide-tag">The Case for Beneficials</span>
+      <h2>Why <span>Beneficial Insects?</span></h2>
     </div>
-    <div style="margin-top:3rem; max-width:750px; text-align:center;">
-      <p style="color:var(--green-mid); font-size:1rem; line-height:1.8;">Beneficial insects target pests at specific life stages, can't generate resistance, and contribute to long-term plant health — not just a quick fix. They form the foundation of informed, sustainable pest management.</p>
+    <div class="cols cols-2" style="align-items:start;">
+      <div>
+        <img src="https://dmvbeneficials.com/wp-content/uploads/2022/03/stratiolaelaps-thumbnail.jpeg" alt="Beneficial insects at work" style="width:100%; height:220px; object-fit:cover; border-radius:8px; margin-bottom:1.2rem;">
+        <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.8; margin-bottom:1rem;">Pests are a natural part of a plant's life and play a role in its micro-ecosystem. Rather than trying to eliminate them once and for all, think of beneficial insects as just another part of regular plant care — the same way you fertilize on a schedule, you can maintain beneficials on a schedule.</p>
+        <div class="callout callout--warning">
+          <h4>⚠ What NOT to use</h4>
+          <ul>
+            <li>Pesticide sprays kill beneficial insects and allow pests to develop resistance</li>
+            <li>Systemic granules increase spider mite fertility and cause population explosions</li>
+            <li>Neem, Captain Jack's, and "organic" sprays are harmful to beneficials and should be stopped at least two weeks before release</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="prevention-card" style="background:rgba(74,140,63,0.08); border:1px solid rgba(74,140,63,0.2); border-radius:8px; padding:1.4rem; margin-bottom:1rem;">
+          <h3 style="font-family:'Playfair Display',serif; color:var(--green-mid); margin-bottom:0.5rem;">🎯 Targeted by Life Stage</h3>
+          <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.6;">Different predators attack different life stages of a pest. A comprehensive treatment covers adults, larvae, and soil-dwelling pupae simultaneously — something no single spray achieves.</p>
+        </div>
+        <div class="prevention-card" style="background:rgba(74,140,63,0.08); border:1px solid rgba(74,140,63,0.2); border-radius:8px; padding:1.4rem; margin-bottom:1rem;">
+          <h3 style="font-family:'Playfair Display',serif; color:var(--green-mid); margin-bottom:0.5rem;">🛡 No Resistance, Ever</h3>
+          <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.6;">Pests cannot develop resistance to being eaten. Predator-prey relationships have been in equilibrium for millions of years — unlike chemical approaches, beneficial insects don't become less effective over time.</p>
+        </div>
+        <div class="prevention-card" style="background:rgba(74,140,63,0.08); border:1px solid rgba(74,140,63,0.2); border-radius:8px; padding:1.4rem; margin-bottom:1rem;">
+          <h3 style="font-family:'Playfair Display',serif; color:var(--green-mid); margin-bottom:0.5rem;">🐾 Safe for Pets &amp; People</h3>
+          <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.6;">All beneficials are safe around curious pets and children. They stay where their prey is — on your plants — and will not establish elsewhere in your home.</p>
+        </div>
+        <div class="prevention-card" style="background:rgba(74,140,63,0.08); border:1px solid rgba(74,140,63,0.2); border-radius:8px; padding:1.4rem;">
+          <h3 style="font-family:'Playfair Display',serif; color:var(--green-mid); margin-bottom:0.5rem;">🌱 Soil Health Bonus</h3>
+          <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.6;">Soil-dwelling beneficials like stratiolaelaps also consume pathogenic fungi and bacteria, actively improving the microbial environment your roots depend on.</p>
+        </div>
+      </div>
     </div>
     <div class="slide-footer">2 / 10</div>
   </div>
